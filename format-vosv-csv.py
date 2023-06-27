@@ -45,13 +45,13 @@ duplicateDoc = []
 duplicateCit = []
 duplicateTLS = []
 
-hitFlag = False
 
 # check if the id is in the duplicateID list
 def checkDuplicateList(id_j, id_list):
     for i in range(len(id_list)):
         for j in id_list[i].split(', '):
             if int(j) == int(id_j):
+                print (id_j, "is already in the list")
                 return i
     return -1
 
@@ -78,18 +78,15 @@ s = OverlapCoefficient()
 
 for i in range(len(id)):
     print("Comparing", id[i], "to the rest of the organizations...")
-    hitFlag = False
     for j in range(i, len(id)):
         x = checkDuplicateList(id[j], duplicateID)
         if x != -1:
-            hitFlag = True
             continue
         # check if the organization is already in the duplicateOrg list
         # this needs to be here because the duplicateOrg list is updated in the checkDuplicateOrg function
         # if the organization is already in the duplicateOrg list, skip
         y = checkDuplicateOrg(organization[i], duplicateOrg, i)
         if y != -1:
-            hitFlag = True
             continue
         # if the organization is the same, skip
         if i == j or id[i] == id[j]:
@@ -109,7 +106,6 @@ for i in range(len(id)):
         else:
             # if the organization is not the same, check for similarity
             if s.distance(organization[i], organization[j]) < similarity:
-                hitFlag = True
                 if documents[i] == documents[j] and citations[i] == citations[j] and totallinkstrength[i] == totallinkstrength[j]:
                     # if similar but similar in all columns, skip
                     # add the organization to the dictionary with the id as the key
