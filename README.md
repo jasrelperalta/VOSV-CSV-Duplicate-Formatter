@@ -15,11 +15,11 @@ This script requires Python 3.6 or later to run. It also requires the following 
 The script is run from the command line with the following command:
 
 ``` bash
-python3 format-vosv-csv.py
+python3 format-vosv-csv.py <input filename> <output filename>
 
 ```
 
-The script reads an input CSV file and writes to an output CSV file. The input CSV file must be specified as "Citation-Organization.csv" and the output CSV file will be specified as "Citation-Organization-Filtered.csv
+The script reads an input CSV file and writes to an output CSV file. 
 
 The user will then be prompted to enter the minimum similarity score. The minimum similarity score is the minimum similarity score between two entries for them to be considered duplicates. The minimum similarity score must be a float value between 0 and 1. The minimum similarity score I recommend is 0.15.
 
