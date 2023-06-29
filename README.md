@@ -21,7 +21,7 @@ python3 format-vosv-csv.py <input filename> <output filename>
 
 The script reads an input CSV file and writes to an output CSV file.
 
-The user will then be prompted to enter the minimum similarity score. The minimum similarity score is the minimum similarity score between two entries for them to be considered duplicates. The minimum similarity score must be a float value between 0 and 1. The minimum similarity score I recommend is 0.15.
+The user will then be prompted to enter the minimum similarity score. The minimum similarity score is the minimum similarity score between two entries for them to be considered duplicates. The minimum similarity score must be a float value between 0 and 1. The minimum similarity score I recommend is 0.15. I tried using 0.1 as the minimum similarity score but it was too low and too many entries were considered duplicates (eg. denmark and delaware universities were flagged as duplicates). On the other hand, when using 0.2 as the minimum similarity score, some duplicates were not flagged as duplicates (eg. too many university of arizona entries were flagged as unique, but it gets into just two entries when using 0.15). So, I think 0.15 is a good minimum similarity score po.
 
 ## Issues
 
