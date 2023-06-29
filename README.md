@@ -27,6 +27,8 @@ The user will then be prompted to enter the minimum similarity score. The minimu
 
 If the entry is too vague, the entry will be too general and will catch too many entries. For example, if the entry is containing only 'insead, fontainebleau, france', most departments and universities will be caught by this entry.
 
+Also, some entries are not catched by the script. A possible reason for this is that the entry is too specific/vague. Or, the entry may be too long and the similarity score is too low for the entry to be considered a duplicate.
+
 ## Author
 
 * Jasrel Peralta
