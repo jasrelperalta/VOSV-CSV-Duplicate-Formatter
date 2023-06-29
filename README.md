@@ -19,15 +19,17 @@ python3 format-vosv-csv.py <input filename> <output filename>
 
 ```
 
-The script reads an input CSV file and writes to an output CSV file. 
+The script reads an input CSV file and writes to an output CSV file.
 
 The user will then be prompted to enter the minimum similarity score. The minimum similarity score is the minimum similarity score between two entries for them to be considered duplicates. The minimum similarity score must be a float value between 0 and 1. The minimum similarity score I recommend is 0.15.
 
-## Issue
+## Issues
 
 If the entry is too vague, the entry will be too general and will catch too many entries. For example, if the entry is containing only 'insead, fontainebleau, france', most departments and universities will be caught by this entry.
 
 Also, some entries are not catched by the script. A possible reason for this is that the entry is too specific/vague. Or, the entry may be too long and the similarity score is too low for the entry to be considered a duplicate.
+
+Some duplicates still pass through the script (Sorry sir 😅). This is because the similarity score is too low for the entry to be considered a duplicate. However, similar entries are still grouped together and is easier if the user manually remove the duplicates straight from the csv file. Also, another solution could be finding the right similarity score threshold.
 
 ## Author
 
